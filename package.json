@@ -1,0 +1,23 @@
+{
+  "name": "subodh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r css/style.min.css",
+    "scss": "node-sass --source-map true --output-style compressed -o css scss",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "watch:scss": "node-sass -w scss --source-map true --output-style compressed -o css scss",
+    "serve": "browser-sync start --proxy \"local.procab.com/css-training\" --files \"css/*.css\"",
+    "watch:all": "parallelshell \"npm run serve\" \"npm run watch:scss\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "node-sass": "^4.5.2",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^3.1.1"
+  }
+}
