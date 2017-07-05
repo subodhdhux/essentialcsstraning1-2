@@ -1,0 +1,19 @@
+{
+  "name": "procab-studio",
+  "version": "1.0.0",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r assets/css/main.css",
+    "scss": "node-sass --source-map true --output-style compressed -o assets/css scss",
+    "build:all": "npm run scss && npm run autoprefixer",
+    "watch:scss": "node-sass -w scss --source-map true --output-style compressed -o assets/css scss",
+    "serve": "browser-sync start --proxy \"http://local.procab.com/procab/html\" --files \"assets/css/*.css\"",
+    "watch:all": "parallelshell \"npm run serve\" \"npm run watch:scss\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.11",
+    "node-sass": "^4.5.3",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^3.2.0"
+  }
+}
